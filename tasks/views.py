@@ -5,7 +5,15 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from .models import Task
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
 
+
+@swagger_auto_schema(
+    method='post',
+    request_body=TaskSerializer,  # Qué datos espera (input)
+    responses={201: TaskSerializer, 400: "Bad Request"}  # Qué responde
+)
 # Create your views here.
 @api_view(['POST'])
 #@authentication_classes([TokenAuthentication])

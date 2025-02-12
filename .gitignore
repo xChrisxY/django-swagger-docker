@@ -2,4 +2,4 @@ venv
 __init__.py
 *.sqlite3
 __pycache__
-
+database
